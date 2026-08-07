@@ -14,8 +14,8 @@
                 <div class="intro">
                     <p>Welcome! I’m</p>
                     <h1>
-                        <span>Carl Matthew</span><br>
-                        <span class="accent">T. Castro</span>
+                        <span>{{ $student['first_name'] }}</span><br>
+                        <span class="accent">{{ $student['last_name'] }}</span>
                     </h1>
                     <p class="role">Web Developer</p>
                     <p class="description">A foundational web application developed to master the basics of modern web development using the Laravel framework. This project demonstrates environment setup (PHP, Composer, MySQL, Git), understanding of the HTTP request lifecycle, and implementation of clean client-server architecture practices.</p>
@@ -28,37 +28,37 @@
                     <div class="detail-row">
                         <div>
                             <div class="detail-label">Student Name</div>
-                            <div class="detail-value">Carl Matthew T. Castro</div>
+                            <div class="detail-value">{{ $student['full_name'] }}</div>
                         </div>
                     </div>
                     <div class="detail-row">
                         <div>
                             <div class="detail-label">Student Number</div>
-                            <div class="detail-value">0123-0616</div>
+                            <div class="detail-value">{{ $student['number'] }}</div>
                         </div>
                     </div>
                     <div class="detail-row">
                         <div>
                             <div class="detail-label">Course</div>
-                            <div class="detail-value">Bachelor of Science in Information Technology</div>
+                            <div class="detail-value">{{ $student['course'] }}</div>
                         </div>
                     </div>
                     <div class="detail-row">
                         <div>
                             <div class="detail-label">Section</div>
-                            <div class="detail-value">3D</div>
+                            <div class="detail-value">{{ $student['section'] }}</div>
                         </div>
                     </div>
                     <div class="detail-row">
                         <div>
                             <div class="detail-label">Subject</div>
-                            <div class="detail-value">ITST 302 - Client-Server Technologies</div>
+                            <div class="detail-value">{{ $student['subject'] }}</div>
                         </div>
                     </div>
                     <div class="detail-row">
                         <div>
                             <div class="detail-label">Current Date</div>
-                            <div class="detail-value">08/07/2026</div>
+                            <div class="detail-value">{{ $student['date'] }}</div>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
 
             <div class="profile-image-panel">
                 <div class="photo-wrap">
-                    <img src="{{ asset('images/Profile.png') }}" alt="Carl Matthew T. Castro">
+                    <img src="{{ asset('images/Profile.png') }}" alt="{{ $student['full_name'] }}">
                 </div>
                 <div class="social-links" id="contact">
                     <a href="#" title="LinkedIn" aria-label="LinkedIn">
