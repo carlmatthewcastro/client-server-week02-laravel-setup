@@ -1,11 +1,14 @@
-# Client-Server Week 02 Laravel Setup
 
-## 1. Project Title
-**Laravel Student Profile Project (ITST 302)**
+
+Client-Server Week 02 Laravel Setup
+
+1. Project Title
+
+Laravel Student Profile Project (ITST 302)
 
 ---
 
-## 2. Introduction
+2. Introduction
 
 Laravel is a modern PHP web framework designed to simplify the development of web applications by providing elegant syntax, expressive routing, and built-in tools for common tasks. It is widely used for building scalable, secure, and maintainable applications.
 
@@ -15,80 +18,102 @@ The purpose of this project is to install and configure a Laravel application, d
 
 ---
 
-## 3. Objectives
+3. Objectives
 
 - Install and configure Laravel in a local development environment.
 - Verify PHP, Composer, Laravel, Git, and MySQL compatibility.
 - Understand key Laravel folder structures and project files.
-- Create a working local application capable of running via `php artisan serve`.
+- Create a working local application capable of running via "php artisan serve".
 - Document installation steps, encountered issues, and implemented solutions.
 
 ---
 
-## 4. Development Environment
+4. Development Environment
 
-| Component | Version / Detail |
-| :--- | :--- |
-| **Operating System** | Microsoft Windows 11 Home Single Language (Build 26200) |
-| **PHP** | 8.2.12 |
-| **Laravel** | 12.65.0 |
-| **Composer** | 2.10.2 |
-| **Git** | 2.55.0.windows.3 |
-| **MySQL / MariaDB** | 15.1 (Distrib 10.4.32-MariaDB) |
-| **VS Code** | 1.132.0 |
+Component| Version / Detail
+Operating System| Microsoft Windows 11 Home Single Language (Build 26200)
+PHP| 8.2.12
+Laravel| 12.65.0
+Composer| 2.10.2
+Git| 2.55.0.windows.3
+MySQL / MariaDB| 15.1 (Distrib 10.4.32-MariaDB)
+VS Code| 1.132.0
 
 ---
 
-## 5. Installation Steps
+5. Installation Steps
 
 1. Open the project folder in Visual Studio Code.
 2. Install PHP dependencies with Composer.
-   - Command: `composer install`
-3. Copy `.env.example` to `.env` and generate the application key.
-   - Command: `copy .env.example .env` (Windows)
-   - Command: `php artisan key:generate`
-4. Configure database settings in `.env` for MySQL/MariaDB.
-   - Example: `DB_CONNECTION=mysql`, `DB_HOST=127.0.0.1`, `DB_PORT=3306`, `DB_DATABASE=laravel`, `DB_USERNAME=root`, `DB_PASSWORD=`.
+   - Command: "composer install"
+3. Copy ".env.example" to ".env" and generate the application key.
+   - Command: "copy .env.example .env" (Windows)
+   - Command: "php artisan key:generate"
+4. Configure database settings in ".env" for MySQL/MariaDB.
+   - Example: "DB_CONNECTION=mysql", "DB_HOST=127.0.0.1", "DB_PORT=3306", "DB_DATABASE=laravel", "DB_USERNAME=root", "DB_PASSWORD=".
 5. Run database migrations.
-   - Command: `php artisan migrate`
+   - Command: "php artisan migrate"
 6. Start the Laravel development server.
-   - Command: `php artisan serve`
-   
----
-
-## 6. Project Structure
-
-- `app/`: Contains application logic, including controllers, models, middleware, and service providers. This is where custom business code is implemented.
-- `routes/`: Defines the routes for the application. `web.php` handles browser requests, while `api.php` handles API endpoints.
-- `resources/`: Contains views, frontend assets, and raw source files. Blade templates live in `resources/views`, and CSS/JS assets are stored in `resources/css` and `resources/js`.
-- `public/`: The web server’s document root. It exposes the `index.php` bootstrap file, asset files, and publicly accessible resources.
-- `config/`: Contains configuration files for database, cache, mail, session, and other application settings.
-- `database/`: Stores migration files, database seeders, and factory definitions used to generate test data.
+   - Command: "php artisan serve"
 
 ---
 
-## 7. Problems Encountered and Solutions
+6. Project Structure
 
-| Problem Encountered | Implemented Solution |
-| :--- | :--- |
-| Composer command was not recognized in some terminal sessions. | Added Composer to the system PATH and restarted the terminal so `composer install` could run correctly. |
-| Incorrect PHP version / PATH configuration pointing to the wrong binary. | Verified the active PHP executable path and updated the system PATH to point explicitly to the target PHP 8.2.12 installation. |
-| MySQL/MariaDB service startup failure during connection tests. | Restarted the XAMPP MySQL/MariaDB service and confirmed correct database ports and credentials in `.env`. |
-| VS Code CLI (`code`) command missing from the system PATH. | Installed/enabled Visual Studio Code command-line shell integration to enable the `code` command from PowerShell. |
-
----
-
-## 8. Verification Screenshots
-
-* **Screenshot 1:** VS Code opening the Laravel project workspace (`Screenshots/Installed Visual Studio Code.png`).
-* **Screenshot 2:** Successful Composer dependency installation output (`Screenshots/Installed Composer.png`).
-* **Screenshot 3:** `.env` configuration and application key generation success message (`Screenshots/Installed Laravel.png`).
-* **Screenshot 4:** Database migrations executing successfully via Artisan (`Screenshots/Installed MySQL.png`).
-* **Screenshot 5:** Laravel development server running locally via `php artisan serve` (`Screenshots/Laravel Project.png`).
+- "app/": Contains application logic, including controllers, models, middleware, and service providers. This is where custom business code is implemented.
+- "routes/": Defines the routes for the application. "web.php" handles browser requests, while "api.php" handles API endpoints.
+- "resources/": Contains views, frontend assets, and raw source files. Blade templates live in "resources/views", and CSS/JS assets are stored in "resources/css" and "resources/js".
+- "public/": The web server’s document root. It exposes the "index.php" bootstrap file, asset files, and publicly accessible resources.
+- "config/": Contains configuration files for database, cache, mail, session, and other application settings.
+- "database/": Stores migration files, database seeders, and factory definitions used to generate test data.
 
 ---
 
-## 9. Reflection
+7. Problems Encountered and Solutions
+
+Problem Encountered| Implemented Solution
+Composer command was not recognized in some terminal sessions.| Added Composer to the system PATH and restarted the terminal so "composer install" could run correctly.
+Incorrect PHP version / PATH configuration pointing to the wrong binary.| Verified the active PHP executable path and updated the system PATH to point explicitly to the target PHP 8.2.12 installation.
+MySQL/MariaDB service startup failure during connection tests.| Restarted the XAMPP MySQL/MariaDB service and confirmed correct database ports and credentials in ".env".
+VS Code CLI ("code") command missing from the system PATH.| Installed/enabled Visual Studio Code command-line shell integration to enable the "code" command from PowerShell.
+
+---
+
+8. Verification Screenshots
+
+Screenshot 1: Visual Studio Code
+
+VS Code opening the Laravel project workspace.
+
+"VS Code opening the Laravel project workspace" (Screenshots/Installed%20Visual%20Studio%20Code.png)
+
+Screenshot 2: Composer Installation
+
+Successful Composer dependency installation output.
+
+"Successful Composer dependency installation output" (Screenshots/Installed%20Composer.png)
+
+Screenshot 3: Laravel Configuration
+
+".env" configuration and application key generation success message.
+
+"Laravel .env configuration and application key generation success message" (Screenshots/Installed%20Laravel.png)
+
+Screenshot 4: Database Migrations
+
+Database migrations executing successfully via Artisan.
+
+"Database migrations executing successfully via Artisan" (Screenshots/Installed%20MySQL.png)
+
+Screenshot 5: Laravel Development Server
+
+Laravel development server running locally via "php artisan serve".
+
+"Laravel development server running locally" (Screenshots/Laravel%20Project.png)
+
+---
+
+9. Reflection
 
 During this Laravel setup activity, I learned how Laravel provides a structured development environment supporting both server-side processing and client-facing application flow. The framework simplifies common tasks such as dependency management, environment configuration, and database migrations. This structure is especially critical in client-server development because it clearly separates server logic from presentation concerns and helps maintain a secure, maintainable codebase.
 
@@ -100,9 +125,9 @@ This knowledge strengthens my confidence in setting up full-stack PHP applicatio
 
 ---
 
-## 10. References
+10. References
 
-- Laravel Documentation. (2026). Retrieved from [https://laravel.com/docs](https://laravel.com/docs)
-- PHP Documentation. (2026). Retrieved from [https://www.php.net/docs.php](https://www.php.net/docs.php)
-- Composer Documentation. (2026). Retrieved from [https://getcomposer.org/doc/](https://getcomposer.org/doc/)
-- Git Documentation. (2026). Retrieved from [https://git-scm.com/doc](https://git-scm.com/doc)
+- Laravel Documentation. (2026). Retrieved from "https://laravel.com/docs" (https://laravel.com/docs)
+- PHP Documentation. (2026). Retrieved from "https://www.php.net/docs.php" (https://www.php.net/docs.php)
+- Composer Documentation. (2026). Retrieved from "https://getcomposer.org/doc/" (https://getcomposer.org/doc/)
+- Git Documentation. (2026). Retrieved from "https://git-scm.com/doc" (https://git-scm.com/doc)
