@@ -64,8 +64,6 @@ The purpose of this project is to install and configure a Laravel application, d
    * *Command:* `php artisan serve`
    * *Screenshot:* `screenshots/artisan-serve.png`
 
-> **Note:** Replace the screenshot placeholders above with actual images captured during your setup process.
-
 ---
 
 ## 6. Project Structure
