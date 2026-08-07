@@ -1,7 +1,7 @@
-# Laravel Student Profile Project (ITST 302)
+# Client-Server Week 02 Laravel Setup
 
 ## 1. Project Title
-**Client-Server Week 02 Laravel Setup**
+**Laravel Student Profile Project (ITST 302)**
 
 ---
 
