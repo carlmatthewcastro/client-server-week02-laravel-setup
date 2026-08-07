@@ -80,11 +80,11 @@ The purpose of this project is to install and configure a Laravel application, d
 
 ## 8. Verification Screenshots
 
-* **Screenshot 1:** VS Code opening the Laravel project workspace (`screenshots/vscode-open-project.png`).
-* **Screenshot 2:** Successful Composer dependency installation output (`screenshots/composer-install.png`).
-* **Screenshot 3:** `.env` configuration and application key generation success message (`screenshots/env-key-generate.png`).
-* **Screenshot 4:** Database migrations executing successfully via Artisan (`screenshots/artisan-migrate.png`).
-* **Screenshot 5:** Laravel development server running locally via `php artisan serve` (`screenshots/artisan-serve.png`).
+* **Screenshot 1:** VS Code opening the Laravel project workspace (`Screenshots/vscode-Installed VSCode.png`).
+* **Screenshot 2:** Successful Composer dependency installation output (`Screenshots/Installed Composer.png`).
+* **Screenshot 3:** `.env` configuration and application key generation success message (`Screenshots/Installed Laravel.png`).
+* **Screenshot 4:** Database migrations executing successfully via Artisan (`Screenshots/Installed MySQL.png`).
+* **Screenshot 5:** Laravel development server running locally via `php artisan serve` (`Screenshots/Laravel Project.png`).
 
 ---
 
