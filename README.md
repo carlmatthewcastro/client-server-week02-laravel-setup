@@ -40,29 +40,23 @@ The purpose of this project is to install and configure a Laravel application, d
 ## 5. Installation Steps
 
 1. **Open the project folder** in Visual Studio Code.
-   * *Screenshot:* `screenshots/vscode-open-project.png`
 
 2. **Install PHP dependencies** using Composer.
    * *Command:* `composer install`
-   * *Screenshot:* `screenshots/composer-install.png`
 
 3. **Configure environment variables** and generate the application key.
    * *Command:* `copy .env.example .env` (Windows)
    * *Command:* `php artisan key:generate`
-   * *Screenshot:* `screenshots/env-key-generate.png`
 
 4. **Configure database settings** in `.env` for MySQL/MariaDB.
    * *Example Configuration:* 
      `DB_CONNECTION=mysql`, `DB_HOST=127.0.0.1`, `DB_PORT=3306`, `DB_DATABASE=laravel`, `DB_USERNAME=root`, `DB_PASSWORD=`
-   * *Screenshot:* `screenshots/env-database-settings.png`
 
 5. **Run database migrations**.
    * *Command:* `php artisan migrate`
-   * *Screenshot:* `screenshots/artisan-migrate.png`
 
 6. **Start the Laravel development server**.
    * *Command:* `php artisan serve`
-   * *Screenshot:* `screenshots/artisan-serve.png`
 
 ---
 
