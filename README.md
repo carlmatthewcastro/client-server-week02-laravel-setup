@@ -1,10 +1,11 @@
 # Laravel Student Profile Project (ITST 302)
 
-## Client-Server Week 02 Laravel Setup
+## 1. Project Title
+**Client-Server Week 02 Laravel Setup**
 
 ---
 
-## Introduction
+## 2. Introduction
 Laravel is a modern PHP web framework designed to simplify the development of web applications by providing elegant syntax, expressive routing, and built-in tools for common tasks. It is widely used for building scalable, secure, and maintainable applications.
 
 Client-server technologies are foundational to web development because they separate responsibilities between the server (which processes requests and manages data) and the client (which presents the user interface and interacts with the server). This separation enables better performance, maintainability, and scalability.
@@ -13,7 +14,7 @@ The purpose of this project is to install and configure a Laravel application, d
 
 ---
 
-## Objectives
+## 3. Objectives
 * Install and configure Laravel in a local development environment.
 * Verify PHP, Composer, Laravel, Git, and MySQL compatibility.
 * Understand key Laravel folder structures and project files.
