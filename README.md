@@ -1,6 +1,4 @@
-# 1. Project Title
-
-**Client-Server Week 02: Laravel Development Environment Setup**
+# Client-Server Week 02: Laravel Development Environment Setup
 
 A Laravel student portfolio that demonstrates a working development environment, the client-server request lifecycle, and a customized homepage.
 
