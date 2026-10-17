@@ -1,20 +1,6 @@
-# Hello Laravel
+# 1. Project Title
 
-**ITST 302 — Client-Server Technologies**
-
-Week 2 Laboratory Activity · Mini Project 01
-
-| Student Information | Details |
-| --- | --- |
-| Name | Carl Matthew T. Castro |
-| Student Number | 0123-0616 |
-| Course | Bachelor of Science in Information Technology |
-| Section | 3D |
-| Subject | ITST 302 — Client-Server Technologies |
-
-## 1. Project Title
-
-**Hello Laravel: Professional Laravel Development Environment Setup**
+**Client-Server Week 02: Laravel Development Environment Setup**
 
 A Laravel student portfolio that demonstrates a working development environment, the client-server request lifecycle, and a customized homepage.
 
@@ -22,11 +8,11 @@ A Laravel student portfolio that demonstrates a working development environment,
 
 ### Brief Overview of Laravel
 
-Laravel is a PHP framework for building web applications. It provides routing, controllers, Blade templates, the Eloquent object-relational mapper, and tools for database migrations. These features help developers organize application logic and create maintainable projects.
+Laravel is a PHP framework for building web applications. It provides routing, controllers, Blade templates, the Eloquent object-relational mapper, and tools for database migrations. These features help developers organize application logic and create maintainable projects (Laravel, n.d.).
 
 ### Importance of Client-Server Technologies
 
-In a web application, the browser acts as the client: it sends an HTTP request and displays the response. The server receives the request, executes application logic, and returns content. Understanding this relationship helps developers build applications that separate presentation, processing, and data storage.
+In a web application, the browser acts as the client: it sends an HTTP request and displays the response. The server receives the request, executes application logic, and returns content. Understanding this relationship helps developers build applications that separate presentation, processing, and data storage (MDN contributors, 2026).
 
 ### Purpose of the Project
 
@@ -67,7 +53,7 @@ MySQL/MariaDB was installed and verified for the activity. The repository's defa
 
 ### Step 1 — Install and Verify PHP
 
-Install PHP through XAMPP and add `C:\xampp\php` to the Windows PATH. Open a new PowerShell terminal and run:
+Install PHP through XAMPP (Apache Friends, n.d.; The PHP Group, n.d.) and add `C:\xampp\php` to the Windows PATH. Open a new PowerShell terminal and run:
 
 ```powershell
 php -v
@@ -79,7 +65,7 @@ php -v
 
 ### Step 2 — Install and Verify Composer
 
-Install Composer for Windows, selecting the PHP executable at `C:\xampp\php\php.exe` when prompted. Reopen the terminal and verify:
+Following the Composer installation guide (Composer, n.d.), install Composer for Windows, selecting the PHP executable at `C:\xampp\php\php.exe` when prompted. Reopen the terminal and verify:
 
 ```powershell
 composer -V
@@ -104,7 +90,7 @@ laravel -V
 
 ### Step 4 — Install and Verify Git
 
-Install Git for Windows with its command-line tools available in PATH. Verify:
+Install Git for Windows with its command-line tools available in PATH (Chacon & Straub, 2014). Verify:
 
 ```powershell
 git --version
@@ -130,7 +116,7 @@ If that directory is already in PATH, use `mysql --version` instead. This comman
 
 ### Step 6 — Install Visual Studio Code and Open the Project
 
-Install Visual Studio Code with the **Add to PATH** option. Open the project folder using **File → Open Folder**, or run this command from the project directory:
+Install Visual Studio Code with the **Add to PATH** option (Microsoft, n.d.). Open the project folder using **File → Open Folder**, or run this command from the project directory:
 
 ```powershell
 code .
@@ -156,8 +142,8 @@ Alternatively, use `laravel new hello-laravel`. These commands create a new appl
 Install Node.js 22.12 or later in the Node.js 22 series, then clone and open this repository:
 
 ```powershell
-git clone https://github.com/carlmatthewcastro/client-server-week02-laravel-setup-.git
-cd client-server-week02-laravel-setup-
+git clone https://github.com/carlmatthewcastro/client-server-week02-laravel-setup.git
+cd client-server-week02-laravel-setup
 composer install
 ```
 
@@ -178,7 +164,7 @@ npm run build
 php artisan serve
 ```
 
-Open **http://127.0.0.1:8000** in a browser. Migrations create the tables needed by the default database-backed sessions and cache. The asset build supplies the CSS and JavaScript referenced by the homepage.
+Open **http://127.0.0.1:8000** in a browser. Migrations create the tables needed by the default database-backed sessions and cache. The Vite asset build supplies the CSS and JavaScript referenced by the homepage (Vite, n.d.).
 
 To use MySQL instead, create a database, set `DB_CONNECTION=mysql`, and configure `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, and `DB_PASSWORD` in `.env` before running migrations.
 
@@ -224,7 +210,7 @@ git push origin main
 
 Use meaningful commit messages that describe the actual changes. Keep `.env` and dependency directories out of version control. Confirm that the repository is public before submitting its URL.
 
-The current remote ends in `client-server-week02-laravel-setup-`. The activity specifies `client-server-week02-laravel-setup`; confirm the required repository name before final submission.
+Repository: [client-server-week02-laravel-setup](https://github.com/carlmatthewcastro/client-server-week02-laravel-setup).
 
 ## 6. Project Structure
 
@@ -276,24 +262,30 @@ All nine screenshots use a consistent **1280 × 800 pixel** resolution. Version 
 
 ## 10. Reflection
 
-Through this activity, I learned that building a Laravel application begins with preparing a reliable development environment. PHP executes the application, Composer manages its dependencies, and Laravel provides the structure for handling requests and returning responses. Verifying each tool helped me understand how these parts depend on one another. I also learned to distinguish the Laravel installer version from the framework version used by my project.
+The completion of this activity strengthened my understanding of the relationship between development environment configuration and reliable web application development. Installing and verifying PHP, Composer, Laravel, Git, and MySQL/MariaDB demonstrated that application functionality depends on correctly configured tools. The distinction between the Laravel installer and the application framework also became clearer, emphasizing the importance of reporting software versions accurately rather than assuming that related tools share the same release number.
 
-Creating the homepage made the client-server model easier to understand. When a browser requests the homepage, Laravel matches the URL to a route, calls a controller, and renders a Blade view. Moving student information into the controller helped me separate application data from presentation. Reusable Blade components also reduced repetition, while displaying the current Philippine date showed how server-generated values can appear in a page.
+Developing the customized homepage provided a practical understanding of client-server communication. A browser request is matched to a route, processed through a controller, and returned as a rendered Blade view. Separating student information from presentation logic clarified the responsibilities of these application components. Reusable templates reduced duplication, while displaying the current date in Philippine time demonstrated the need to consider application context when presenting server-generated information.
 
-The main challenges involved environment configuration. Composer was not recognized in some terminal sessions, PATH selected the wrong PHP executable, and the MySQL service did not start during connection checks. The VS Code command was also missing from PATH. These problems taught me to inspect error messages, locate the executable being used, restart terminals after configuration changes, and verify services before changing application code. Recording each solution made the troubleshooting process easier to repeat.
+The principal challenges concerned configuration rather than feature implementation. Unrecognized Composer commands, conflicting PHP executable paths, an unavailable MySQL service, and missing Visual Studio Code command-line integration initially interrupted the setup process. Resolving these issues required systematic examination of environment variables, executable locations, service availability, and configuration values. This experience reinforced the value of evidence-based troubleshooting: identifying the cause of an error before modifying application code. Documenting the corresponding solutions also created a reference for repeating the setup on another machine.
 
-Laravel is important in client-server development because it provides a consistent way to organize server responsibilities. Routes identify the requested resource, controllers coordinate processing, and views present the response. Database migrations and Eloquent support data management as an application grows. This organization helps developers maintain their work and understand code written by other team members.
+Laravel's relevance to client-server development became evident through its organized approach to routing, controllers, views, and database management. These conventions provide a consistent structure for coordinating server responsibilities and presenting responses to clients. Although this activity focused on environment preparation and a portfolio homepage, the framework's migration and data-access capabilities provide a foundation for later database features. Understanding that foundation is necessary before attempting more complex application requirements.
 
-I also learned that documentation and presentation are part of completing a project. A useful README needs accurate commands, clear explanations, and screenshots that match the current application. Using consistent screenshot sizes improved the evidence, while Git helped record changes through meaningful commits. Responsive styling and accessible motion preferences reminded me to consider how different people experience a website.
-
-These skills will support future projects, including the planned Laravel e-commerce system. I can apply the same setup checks, request-flow understanding, troubleshooting process, and documentation habits when adding database features or working with classmates. This activity gave me a practical foundation for developing more organized and reliable web applications.
+The activity further developed my appreciation of documentation, version control, and interface quality as essential development responsibilities. Meaningful commits made changes easier to trace, while captioned screenshots supported verification of the documented setup. Responsive layouts and reduced-motion support encouraged consideration of usability alongside functionality. These practices will inform future coursework and the planned Laravel e-commerce project by supporting reproducible setup, clearer collaboration, and more maintainable implementation. Overall, the activity established a practical basis for approaching subsequent development tasks with greater technical discipline and confidence.
 
 ## 11. References
 
-Composer. (n.d.). *Documentation*. https://getcomposer.org/doc/
+Apache Friends. (n.d.). *XAMPP FAQs for Windows*. https://www.apachefriends.org/faq_windows.html
 
-Git. (n.d.). *Documentation*. https://git-scm.com/doc
+Chacon, S., & Straub, B. (2014). *Pro Git* (2nd ed.). Apress. https://git-scm.com/book/en/v2
 
-Laravel. (n.d.). *Laravel 12.x documentation*. https://laravel.com/docs/12.x
+Composer. (n.d.). *Introduction*. https://getcomposer.org/doc/00-intro.md
+
+Laravel. (n.d.). *Installation*. Laravel 12.x documentation. https://laravel.com/docs/12.x
+
+MDN contributors. (2026, October 8). *Overview of HTTP*. MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview
+
+Microsoft. (n.d.). *Installing Visual Studio Code on Windows*. Visual Studio Code. https://code.visualstudio.com/docs/setup/windows
 
 The PHP Group. (n.d.). *PHP manual*. https://www.php.net/manual/en/
+
+Vite. (n.d.). *Getting started*. https://vite.dev/guide/
