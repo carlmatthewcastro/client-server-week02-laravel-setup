@@ -1,58 +1,190 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>ITST 302 - Client-Server Technologies</title>
-        <meta name="description" content="Student homepage for Carl Matthew T. Castro">
-
+        <title>Hello Laravel | Carl Matthew T. Castro</title>
+        <meta name="description" content="Carl Matthew T. Castro's student portfolio and Hello Laravel project for ITST 302.">
+        <link rel="icon" type="image/svg+xml" href="{{ asset('images/cc-monogram.svg') }}">
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
-        <section class="hero">
-            <div class="profile-panel">
-                <div class="intro">
-                    <p>Welcome! I’m</p>
-                    <h1>
-                        <span>{{ $student['first_name'] }}</span><br>
-                        <span class="accent">{{ $student['last_name'] }}</span>
+        <a class="skip-link" href="#main-content">Skip to content</a>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="brand" href="#home">
+                    <img class="brand-mark" src="{{ asset('images/cc-monogram.svg') }}" alt="" width="36" height="45">
+                    <span class="brand-wordmark">CARL CASTRO<small>STUDENT DEVELOPER</small>
+                    </span>
+                </a>
+                <nav aria-label="Main navigation">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#project">Project</a>
+                    <a class="nav-contact" href="#contact">Let’s connect</a>
+                </nav>
+            </div>
+        </header>
+        <main id="main-content">
+            <section class="hero container" id="home" aria-labelledby="hero-title">
+                <div class="hero-copy">
+                    <p class="eyebrow">STUDENT DEVELOPER · BSIT 3D</p>
+                    <h1 id="hero-title">Carl Matthew<br>
+                        <span class="accent">T. Castro</span>
                     </h1>
-                    <p class="role">Web Developer</p>
-                    <p class="description">A foundational web application developed to master the basics of modern web development using the Laravel framework. This project demonstrates environment setup (PHP, Composer, MySQL, Git), understanding of the HTTP request lifecycle, and implementation of clean client-server architecture practices.</p>
+                    <p class="hero-intro">Information Technology student & aspiring web developer</p>
+                    <p class="description">An Information Technology student exploring the web, one project at a time. Welcome to my first step into Laravel and client-server development.</p>
+                    <div class="buttons">
+                        <a href="#project" class="button button-primary">Explore my project</a>
+                        <a href="#about" class="button button-secondary">Meet the developer</a>
+                    </div>
+                    <p class="hero-note">Learning by doing. Built with Laravel.</p>
                 </div>
-                <div class="buttons">
-                    <a href="#details" class="button button-primary">View Details</a>
-                    <a href="#contact" class="button button-secondary">Get In Touch</a>
-                </div>
-                <div class="details-card" id="details">
-                    <x-detail-row label="Student Name" :value="$student['full_name']" />
-                    <x-detail-row label="Student Number" :value="$student['number']" />
-                    <x-detail-row label="Course" :value="$student['course']" />
-                    <x-detail-row label="Section" :value="$student['section']" />
-                    <x-detail-row label="Subject" :value="$student['subject']" />
-                    <x-detail-row label="Current Date" :value="now()->format('m/d/Y')" />
-                </div>
-            </div>
-
-            <div class="profile-image-panel">
-                <div class="photo-wrap">
-                    <img src="{{ asset('images/Profile.png') }}" alt="{{ $student['full_name'] }}">
-                </div>
-                <div class="social-links" id="contact">
-                    <x-social-link href="https://www.linkedin.com" title="LinkedIn" aria-label="LinkedIn" target="_blank">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.85 6 2.47 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8.75h5V24H0V8.75zm7.5 0h4.8v2.1h.1c.67-1.27 2.3-2.6 4.75-2.6 5.08 0 6 3.34 6 7.68V24h-5V16.6c0-1.76 0-4.03-2.45-4.03-2.45 0-2.82 1.9-2.82 3.88V24h-5V8.75z"/></svg>
-                    </x-social-link>
-                    <x-social-link href="https://github.com" title="GitHub" aria-label="GitHub" target="_blank">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.78 8.21 11.37.6.11.82-.26.82-.58 0-.29-.01-1.05-.02-2.06-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.86 2.84 1.32 3.53 1.01.11-.79.42-1.32.76-1.62-2.67-.31-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.31-.54-1.57.12-3.27 0 0 1.01-.32 3.3 1.23.95-.26 1.97-.39 2.98-.39 1.01 0 2.03.13 2.98.39 2.29-1.55 3.29-1.23 3.29-1.23.66 1.7.24 2.96.12 3.27.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.11.81 2.24 0 1.62-.01 2.92-.01 3.32 0 .32.21.7.82.58C20.56 21.78 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                    </x-social-link>
-                    <x-social-link href="https://x.com" title="Twitter" aria-label="Twitter" target="_blank">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 4.56c-.89.39-1.84.65-2.84.77a4.92 4.92 0 0 0 2.16-2.71 9.86 9.86 0 0 1-3.12 1.2 4.92 4.92 0 0 0-8.38 4.48A13.98 13.98 0 0 1 1.67 3.15a4.92 4.92 0 0 0 1.52 6.57 4.9 4.9 0 0 1-2.23-.62v.06a4.92 4.92 0 0 0 3.95 4.82 4.9 4.9 0 0 1-2.22.08 4.92 4.92 0 0 0 4.6 3.42 9.86 9.86 0 0 1-6.11 2.1c-.4 0-.79-.02-1.18-.07a13.94 13.94 0 0 0 7.55 2.21c9.06 0 14.03-7.51 14.03-14.03 0-.21 0-.42-.02-.63A10.02 10.02 0 0 0 24 4.56z"/></svg>
-                    </x-social-link>
-                    <x-social-link href="mailto:student@example.com" title="Email" aria-label="Email" target="_self">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4.5h20A2.5 2.5 0 0 1 24 7v10a2.5 2.5 0 0 1-2.5 2.5H2A2.5 2.5 0 0 1-.5 17V7A2.5 2.5 0 0 1 2 4.5zm0 2v.01L12 13 22 6.51V6.5H2zM22 17V8.69l-9.38 6.8a1 1 0 0 1-1.24 0L2 8.69V17h20z"/></svg>
-                    </x-social-link>
+                <figure class="portrait">
+                    <img src="{{ asset('images/Profile.png') }}" alt="Portrait of {{ $student['full_name'] }}" fetchpriority="high">
+                    <figcaption>
+                        <strong>{{ $student['full_name'] }}</strong>
+                        <small>Aspiring Web Developer</small>
+                    </figcaption>
+                </figure>
+            </section>
+            <div class="stack-strip">
+                <div class="container stack-inner">
+                    <p>THE TOOLS BEHIND THE PROJECT</p>
+                    <ul aria-label="Development tools">
+                        <li>PHP</li>
+                        <li>Laravel</li>
+                        <li>Composer</li>
+                        <li>MySQL</li>
+                        <li>Git</li>
+                        <li>VS Code</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+            <section class="section container" id="about" aria-labelledby="about-title">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">01 / THE DEVELOPER</p>
+                        <h2 id="about-title">A little about me</h2>
+                    </div>
+                    <p>My background, studies, and current focus in web development.</p>
+                </div>
+                <div class="about-layout">
+                    <article class="about-copy">
+                        <span class="mini-label">INFORMATION TECHNOLOGY STUDENT</span>
+                        <h3>Learning how the web works, from request to response.</h3>
+                        <p>I’m {{ $student['first_name'] }}, a BSIT student in Section {{ $student['section'] }}. I’m learning to turn classroom lessons into working Laravel applications.</p>
+                        <p>For ITST 302, I’m exploring routing, controllers, and Blade views while developing good habits in Git and project documentation.</p>
+                        <div class="study-focus">
+                            <p>Currently exploring</p>
+                            <ul aria-label="Current learning focus">
+                                <li>Laravel & PHP</li>
+                                <li>Client-server development</li>
+                                <li>Git workflow</li>
+                            </ul>
+                        </div>
+                        <a class="text-link" href="#project">See what I’m working on</a>
+                    </article>
+                    <section class="student-panel" aria-labelledby="student-panel-title">
+                        <div class="student-panel-heading">
+                            <div>
+                                <p class="mini-label">ACADEMIC PROFILE</p>
+                                <h3 id="student-panel-title">Student information</h3>
+                            </div>
+                            <span class="section-badge">BSIT {{ $student['section'] }}</span>
+                        </div>
+                        <dl class="details-grid">
+                            <x-detail-row label="Student Name" :value="$student['full_name']" />
+                            <x-detail-row label="Student Number" :value="$student['number']" />
+                            <x-detail-row label="Course" :value="$student['course']" />
+                            <x-detail-row label="Section" :value="$student['section']" />
+                            <x-detail-row label="Subject" :value="$student['subject']" />
+                            <x-detail-row label="Current Date (Asia/Manila)" :value="$student['date']" />
+                        </dl>
+                    </section>
+                </div>
+            </section>
+            <section class="project-section" id="project" aria-labelledby="project-title">
+                <div class="section container">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">02 / FEATURED PROJECT</p>
+                            <h2 id="project-title">Where the journey begins
+                            </h2>
+                        </div>
+                        <span class="project-number">MP / 01</span>
+                    </div>
+                    <article class="project-card">
+                        <div class="project-visual">
+                            <div class="window-bar">
+                                <i>
+                                </i>
+                                <i>
+                                </i>
+                                <i>
+                                </i>
+                                <span>hello-laravel / request lifecycle</span>
+                            </div>
+                            <div class="code-display">
+                                <span class="code-comment">// A request. A route. A response.</span>
+                                <p>
+                                    <span class="code-pink">Route</span>::get(<span class="code-green">'/'</span>,<br>&nbsp;[PortfolioController::class,<br>&nbsp;<span class="code-green">'index'</span>]);</p>
+                                <div class="request-flow" aria-label="Browser request to Laravel server to Blade response">
+                                    <span>Browser</span>
+                                    <span>Laravel</span>
+                                    <span>Blade view</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-copy">
+                            <p class="eyebrow">ITST 302 · WEEK 2</p>
+                            <h3>Hello Laravel</h3>
+                            <p class="welcome-message">Hello Laravel! Welcome to Client-Server Technologies.</p>
+                            <p>A professional development environment setup and my first Laravel application. This project connects the essentials: routing, controllers, Blade views, and version control.</p>
+                            <ul class="tags" aria-label="Project technologies">
+                                <li>Laravel 12</li>
+                                <li>PHP 8</li>
+                                <li>Blade</li>
+                                <li>Vite</li>
+                            </ul>
+                            <a class="text-link" href="https://github.com/carlmatthewcastro/client-server-week02-laravel-setup-" target="_blank" rel="noopener noreferrer">View source & documentation</a>
+                        </div>
+                    </article>
+                    <div class="learning-grid">
+                        <article>
+                            <span>01</span>
+                            <h3>Environment setup</h3>
+                            <p>Configure PHP, Composer, and the tools needed to run a Laravel application locally.</p>
+                        </article>
+                        <article>
+                            <span>02</span>
+                            <h3>Client meets server</h3>
+                            <p>Follow an HTTP request through a route and controller to a rendered Blade view.</p>
+                        </article>
+                        <article>
+                            <span>03</span>
+                            <h3>Build with good habits</h3>
+                            <p>Organize reusable components, document the process, and track changes with Git.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="contact-section container" id="contact" aria-labelledby="contact-title">
+                <div>
+                    <p class="eyebrow">03 / KEEP IN TOUCH</p>
+                    <h2 id="contact-title">Let’s keep building
+                    </h2>
+                    <p>Follow my projects and see what I learn next.</p>
+                </div>
+                <a href="https://github.com/carlmatthewcastro" class="button button-primary" target="_blank" rel="noopener noreferrer">Find me on GitHub</a>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>© {{ now('Asia/Manila')->year }} {{ $student['full_name'] }}</p>
+                <p>Made with Laravel · ITST 302</p>
+                <a href="#home">Back to top</a>
+            </div>
+        </footer>
     </body>
 </html>

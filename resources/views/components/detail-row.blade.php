@@ -1,8 +1,6 @@
 @props(['label', 'value'])
 
 <div class="detail-row">
-    <div>
-        <div class="detail-label">{{ $label }}</div>
-        <div class="detail-value">{{ $value }}</div>
-    </div>
+    <dt class="detail-label">{{ $label }}</dt>
+    <dd class="detail-value">{{ $value }}</dd>
 </div>
