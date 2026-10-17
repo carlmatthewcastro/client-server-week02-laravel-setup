@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\View\View;
+
 class PortfolioController extends Controller
 {
-    public function index()
+    public function index(): View
     {
         $student = [
             'first_name' => 'Carl Matthew',
@@ -14,7 +16,7 @@ class PortfolioController extends Controller
             'course' => 'Bachelor of Science in Information Technology',
             'section' => '3D',
             'subject' => 'ITST 302 - Client-Server Technologies',
-            'date' => now()->format('m/d/Y'),
+            'date' => now('Asia/Manila')->format('m/d/Y'),
         ];
 
         return view('welcome', compact('student'));
