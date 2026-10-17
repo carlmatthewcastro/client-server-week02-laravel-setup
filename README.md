@@ -1,110 +1,299 @@
+# Hello Laravel
 
+**ITST 302 — Client-Server Technologies**
 
-# Client-Server Week 02 Laravel Setup
+Week 2 Laboratory Activity · Mini Project 01
+
+| Student Information | Details |
+| --- | --- |
+| Name | Carl Matthew T. Castro |
+| Student Number | 0123-0616 |
+| Course | Bachelor of Science in Information Technology |
+| Section | 3D |
+| Subject | ITST 302 — Client-Server Technologies |
 
 ## 1. Project Title
-**Laravel Student Profile Project (ITST 302)**
 
----
+**Hello Laravel: Professional Laravel Development Environment Setup**
+
+A Laravel student portfolio that demonstrates a working development environment, the client-server request lifecycle, and a customized homepage.
 
 ## 2. Introduction
 
-Laravel is a modern PHP web framework designed to simplify the development of web applications by providing elegant syntax, expressive routing, and built-in tools for common tasks. It is widely used for building scalable, secure, and maintainable applications.
+### Brief Overview of Laravel
 
-Client-server technologies are foundational to web development because they separate responsibilities between the server, which processes requests and manages data, and the client, which presents the user interface and interacts with the server. This separation enables better performance, maintainability, and scalability.
+Laravel is a PHP framework for building web applications. It provides routing, controllers, Blade templates, the Eloquent object-relational mapper, and tools for database migrations. These features help developers organize application logic and create maintainable projects.
 
-The purpose of this project is to install and configure a Laravel application, document the setup process, and demonstrate the structure of a Laravel project in a client-server environment.
+### Importance of Client-Server Technologies
 
----
+In a web application, the browser acts as the client: it sends an HTTP request and displays the response. The server receives the request, executes application logic, and returns content. Understanding this relationship helps developers build applications that separate presentation, processing, and data storage.
+
+### Purpose of the Project
+
+This activity establishes a Laravel development environment using PHP, Composer, Laravel, Git, MySQL/MariaDB, and Visual Studio Code. The application demonstrates routing through a controller to a Blade view. Its homepage presents the developer's profile, student information, project overview, and the current date in Philippine time. This README records the setup process, verification evidence, challenges, and solutions.
 
 ## 3. Objectives
 
-- Install and configure Laravel in a local development environment.
-- Verify PHP, Composer, Laravel, Git, and MySQL compatibility.
-- Understand key Laravel folder structures and project files.
-- Create a working local application capable of running via `php artisan serve`.
-- Document installation steps, encountered issues, and implemented solutions.
+The following objectives were achieved during the activity:
 
----
+1. Set up the tools needed for local Laravel development.
+2. Verify PHP, Composer, the Laravel installer, Git, and MySQL/MariaDB using version commands.
+3. Create and run a Laravel application using `php artisan serve`.
+4. Connect a browser route to a controller and render a Blade view.
+5. Customize the homepage with the required greeting, student details, and current date.
+6. Organize reusable Blade components and responsive frontend assets.
+7. Maintain a Git history with at least five meaningful existing commits.
+8. Document installation steps, screenshots, encountered problems, and solutions in Markdown.
 
 ## 4. Development Environment
 
-| Component | Version / Detail |
-| :--- | :--- |
-| **Operating System** | Microsoft Windows 11 Home Single Language (Build 26200) |
-| **PHP** | 8.2.12 |
-| **Laravel** | 12.65.0 |
-| **Composer** | 2.10.2 |
-| **Git** | 2.55.0.windows.3 |
-| **MySQL / MariaDB** | 15.1 (Distrib 10.4.32-MariaDB) |
-| **VS Code** | 1.132.0 |
+| Component | Version / Details |
+| --- | --- |
+| Operating System | Microsoft Windows 11 Home Single Language, Build 26200 |
+| PHP | 8.2.12 |
+| Laravel Framework | 12.65.0 |
+| Laravel Installer | 5.32.0 |
+| Composer | 2.10.3 |
+| Git | 2.55.0.windows.3 |
+| MySQL / MariaDB | MariaDB 10.4.32 through XAMPP; command-line client reports Ver 15.1 |
+| Visual Studio Code | 1.142.0 |
+| Node.js | 22.20.0; used to build frontend assets with Vite |
 
----
+Tool versions were verified locally. The operating-system details come from the original setup record. The Laravel installer version differs from the Laravel framework version installed in this project.
+
+MySQL/MariaDB was installed and verified for the activity. The repository's default `.env.example` uses **SQLite**, so MySQL is optional when running this homepage with the default configuration.
 
 ## 5. Installation Steps
 
-1. Open the project folder in Visual Studio Code.
-2. Install PHP dependencies with Composer.
-   - Command: `composer install`
-3. Copy `.env.example` to `.env` and generate the application key.
-   - Command: `copy .env.example .env` (Windows)
-   - Command: `php artisan key:generate`
-4. Configure database settings in `.env` for MySQL/MariaDB.
-   - Example: `DB_CONNECTION=mysql`, `DB_HOST=127.0.0.1`, `DB_PORT=3306`, `DB_DATABASE=laravel`, `DB_USERNAME=root`, `DB_PASSWORD=`.
-5. Run database migrations.
-   - Command: `php artisan migrate`
-6. Start the Laravel development server.
-   - Command: `php artisan serve`
-   
----
+### Step 1 — Install and Verify PHP
+
+Install PHP through XAMPP and add `C:\xampp\php` to the Windows PATH. Open a new PowerShell terminal and run:
+
+```powershell
+php -v
+```
+
+![PHP version verification](Screenshots/php-version.png)
+
+*Figure 1. PHP 8.2.12 verified using `php -v`.*
+
+### Step 2 — Install and Verify Composer
+
+Install Composer for Windows, selecting the PHP executable at `C:\xampp\php\php.exe` when prompted. Reopen the terminal and verify:
+
+```powershell
+composer -V
+```
+
+![Composer version verification](Screenshots/composer-version.png)
+
+*Figure 2. Composer 2.10.3 verified using `composer -V`.*
+
+### Step 3 — Install and Verify the Laravel Installer
+
+Install the Laravel installer through Composer. Ensure Composer's global executable directory is included in PATH, then verify:
+
+```powershell
+composer global require laravel/installer
+laravel -V
+```
+
+![Laravel installer version verification](Screenshots/laravel-version.png)
+
+*Figure 3. Laravel Installer 5.32.0 verified using `laravel -V`.*
+
+### Step 4 — Install and Verify Git
+
+Install Git for Windows with its command-line tools available in PATH. Verify:
+
+```powershell
+git --version
+```
+
+![Git version verification](Screenshots/git-version.png)
+
+*Figure 4. Git 2.55.0.windows.3 verified using `git --version`.*
+
+### Step 5 — Install and Verify MySQL/MariaDB
+
+Install XAMPP and start its MySQL service from the XAMPP Control Panel. XAMPP provides MariaDB, a MySQL-compatible database server. Verify the installed client:
+
+```powershell
+& 'C:\xampp\mysql\bin\mysql.exe' --version
+```
+
+If that directory is already in PATH, use `mysql --version` instead. This command verifies the client version; it does not prove that the database service is running.
+
+![MySQL and MariaDB version verification](Screenshots/mysql-version.png)
+
+*Figure 5. The XAMPP database client reports MariaDB 10.4.32.*
+
+### Step 6 — Install Visual Studio Code and Open the Project
+
+Install Visual Studio Code with the **Add to PATH** option. Open the project folder using **File → Open Folder**, or run this command from the project directory:
+
+```powershell
+code .
+```
+
+![Laravel homepage source open in Visual Studio Code](Screenshots/vscode.png)
+
+*Figure 6. The Laravel project and its homepage source open in Visual Studio Code.*
+
+### Step 7 — Create a Laravel Project
+
+For a new application, run:
+
+```powershell
+composer create-project laravel/laravel hello-laravel
+cd hello-laravel
+```
+
+Alternatively, use `laravel new hello-laravel`. These commands create a new application; use the following instructions to run this existing customized repository.
+
+### Step 8 — Configure and Run This Repository
+
+Install Node.js 22.12 or later in the Node.js 22 series, then clone and open this repository:
+
+```powershell
+git clone https://github.com/carlmatthewcastro/client-server-week02-laravel-setup-.git
+cd client-server-week02-laravel-setup-
+composer install
+```
+
+For a fresh clone, create the local environment file and generate the application key:
+
+```powershell
+Copy-Item .env.example .env
+php artisan key:generate
+```
+
+Keep the default SQLite connection and enable PHP's `pdo_sqlite` extension. Create the database file, run migrations, and build the assets:
+
+```powershell
+php -r "file_exists('database/database.sqlite') || touch('database/database.sqlite');"
+php artisan migrate
+npm ci
+npm run build
+php artisan serve
+```
+
+Open **http://127.0.0.1:8000** in a browser. Migrations create the tables needed by the default database-backed sessions and cache. The asset build supplies the CSS and JavaScript referenced by the homepage.
+
+To use MySQL instead, create a database, set `DB_CONNECTION=mysql`, and configure `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, and `DB_PASSWORD` in `.env` before running migrations.
+
+![Artisan development server running](Screenshots/artisan-serve.png)
+
+*Figure 7. A running Artisan development server. This capture explicitly uses port 8011; the default port is 8000.*
+
+### Step 9 — Customize and Verify the Homepage
+
+The application uses the following files:
+
+- `routes/web.php` maps `/` to `PortfolioController`.
+- `app/Http/Controllers/PortfolioController.php` supplies student details and the current date in `Asia/Manila`.
+- `resources/views/welcome.blade.php` renders the homepage and required greeting: **Hello Laravel! Welcome to Client-Server Technologies.**
+- `resources/views/components/` contains reusable Blade components.
+- `resources/css/app.css` and `resources/js/app.js` provide responsive styling and animations.
+
+The About section displays the student's name, number, course, section, subject, and current date.
+
+```powershell
+php artisan test
+npm run build
+```
+
+![Homepage overview](Screenshots/hello-laravel-homepage-1.png)
+
+*Figure 8. Homepage overview with the developer introduction and profile photograph.*
+
+![About section and student information](Screenshots/hello-laravel-homepage-2.png)
+
+*Figure 9. About section with learning focus and the required student information.*
+
+### Step 10 — Track Changes and Publish to GitHub
+
+For this existing Git repository, review and commit the intended changes, then push:
+
+```powershell
+git status
+git add README.md app resources routes tests Screenshots docs
+git commit -m "docs: update activity documentation and screenshots"
+git push origin main
+```
+
+Use meaningful commit messages that describe the actual changes. Keep `.env` and dependency directories out of version control. Confirm that the repository is public before submitting its URL.
+
+The current remote ends in `client-server-week02-laravel-setup-`. The activity specifies `client-server-week02-laravel-setup`; confirm the required repository name before final submission.
 
 ## 6. Project Structure
 
-- `app/`: Contains application logic, including controllers, models, middleware, and service providers. This is where custom business code is implemented.
-- `routes/`: Defines the routes for the application. `web.php` handles browser requests, while `api.php` handles API endpoints.
-- `resources/`: Contains views, frontend assets, and raw source files. Blade templates live in `resources/views`, and CSS/JS assets are stored in `resources/css` and `resources/js`.
-- `public/`: The web server’s document root. It exposes the `index.php` bootstrap file, asset files, and publicly accessible resources.
-- `config/`: Contains configuration files for database, cache, mail, session, and other application settings.
-- `database/`: Stores migration files, database seeders, and factory definitions used to generate test data.
+| Folder | Purpose in the Project |
+| --- | --- |
+| `app/` | Contains application logic, including `PortfolioController`, models, and service providers. |
+| `routes/` | Defines application routes. `web.php` maps browser requests to the controller; this project does not include an API route file. |
+| `resources/` | Stores Blade views, reusable components, source CSS, and JavaScript. |
+| `public/` | Serves as the web document root and contains `index.php`, public images, and compiled frontend assets. |
+| `config/` | Stores configuration for the application, database, sessions, cache, mail, and other services. |
+| `database/` | Contains migrations, factories, seeders, and the local SQLite database when created. |
+| `tests/` | Contains automated checks for the application, including homepage content and the Philippine date. |
+| `Screenshots/` | Stores the nine verification images used in this README. |
+| `docs/` | Contains the LinkedIn portfolio post draft. |
 
----
+## 7. Problems Encountered
 
-## 7. Problems Encountered and Solutions
+The original setup documentation records these installation challenges:
 
-| Problem Encountered | Implemented Solution |
-| :--- | :--- |
-| Composer command was not recognized in some terminal sessions. | Added Composer to the system PATH and restarted the terminal so `composer install` could run correctly. |
-| Incorrect PHP version / PATH configuration pointing to the wrong binary. | Verified the active PHP executable path and updated the system PATH to point explicitly to the target PHP 8.2.12 installation. |
-| MySQL/MariaDB service startup failure during connection tests. | Restarted the XAMPP MySQL/MariaDB service and confirmed correct database ports and credentials in `.env`. |
-| VS Code CLI (`code`) command missing from the system PATH. | Installed/enabled Visual Studio Code command-line shell integration to enable the `code` command from PowerShell. |
+1. **Composer was not recognized.** Some terminal sessions could not locate the Composer command.
+2. **PHP PATH pointed to the wrong executable.** The active terminal used an unintended PHP installation.
+3. **MySQL/MariaDB did not start.** Database connection checks failed while the service was unavailable.
+4. **The VS Code command was unavailable.** PowerShell did not recognize `code`.
 
----
+## 8. Solutions
 
-## 8. Verification Screenshots
+| Problem | Solution Applied |
+| --- | --- |
+| Composer command not recognized | Added Composer's executable directory to PATH and reopened the terminal. Verified the result with `composer -V`. |
+| Incorrect PHP executable | Checked executable locations using `where.exe php` and updated PATH so `C:\xampp\php` took priority. Verified with `php -v`. |
+| MySQL/MariaDB service unavailable | Restarted the service through XAMPP and checked the configured port and database credentials. For MySQL-backed Laravel connections, ensured `.env` matched the running server. |
+| VS Code command not recognized | Enabled the installer's **Add to PATH** option and reopened PowerShell. Verified that `code .` opened the project. |
 
-* **Screenshot 1:** VS Code opening the Laravel project workspace (`Screenshots/Installed Visual Studio Code.png`).
-* **Screenshot 2:** Successful Composer dependency installation output (`Screenshots/Installed Composer.png`).
-* **Screenshot 3:** `.env` configuration and application key generation success message (`Screenshots/Installed Laravel.png`).
-* **Screenshot 4:** Database migrations executing successfully via Artisan (`Screenshots/Installed MySQL.png`).
-* **Screenshot 5:** Laravel development server running locally via `php artisan serve` (`Screenshots/Laravel Project.png`).
+## 9. Screenshots
 
----
+All nine screenshots use a consistent **1280 × 800 pixel** resolution. Version commands were freshly captured with matching terminal framing. The VS Code image shows the actual homepage source, and the two homepage images show the introduction and About section. Reduced motion was enabled for stable browser captures.
 
-## 9. Reflection
+| Figure | Screenshot | Caption |
+| --- | --- | --- |
+| 1 | [php-version.png](Screenshots/php-version.png) | PHP 8.2.12 command-line verification. |
+| 2 | [composer-version.png](Screenshots/composer-version.png) | Composer 2.10.3 command-line verification. |
+| 3 | [laravel-version.png](Screenshots/laravel-version.png) | Laravel Installer 5.32.0 command-line verification. |
+| 4 | [git-version.png](Screenshots/git-version.png) | Git 2.55.0.windows.3 command-line verification. |
+| 5 | [mysql-version.png](Screenshots/mysql-version.png) | XAMPP MariaDB client version verification. |
+| 6 | [vscode.png](Screenshots/vscode.png) | Laravel project folders and homepage source in VS Code. |
+| 7 | [artisan-serve.png](Screenshots/artisan-serve.png) | Artisan development server running on port 8011. |
+| 8 | [hello-laravel-homepage-1.png](Screenshots/hello-laravel-homepage-1.png) | Homepage introduction and developer profile. |
+| 9 | [hello-laravel-homepage-2.png](Screenshots/hello-laravel-homepage-2.png) | About section, learning focus, and student details. |
 
-During this Laravel setup activity, I learned how Laravel provides a structured development environment supporting both server-side processing and client-facing application flow. The framework simplifies common tasks such as dependency management, environment configuration, and database migrations. This structure is especially critical in client-server development because it clearly separates server logic from presentation concerns and helps maintain a secure, maintainable codebase.
+## 10. Reflection
 
-The challenges encountered largely involved local development tooling configurations. Composer and PHP path settings required careful validation to ensure correct binary execution. Additionally, experiencing MySQL service startup issues highlighted the importance of ensuring dependent background services are active before Laravel attempts database communication. Discovering that the Visual Studio Code CLI required explicit PATH integration also reinforced the value of a properly configured developer workstation.
+Through this activity, I learned that building a Laravel application begins with preparing a reliable development environment. PHP executes the application, Composer manages its dependencies, and Laravel provides the structure for handling requests and returning responses. Verifying each tool helped me understand how these parts depend on one another. I also learned to distinguish the Laravel installer version from the framework version used by my project.
 
-Laravel is invaluable in client-server architecture due to its opinionated conventions and built-in support for routing, authentication, database abstraction, and templating. These tools reduce repetitive boilerplate setup, allowing developers to focus on feature implementation rather than infrastructure wiring. Furthermore, Laravel’s migration and ORM systems keep the server's data model synchronized with application code, streamlining integration with modern web clients.
+Creating the homepage made the client-server model easier to understand. When a browser requests the homepage, Laravel matches the URL to a route, calls a controller, and renders a Blade view. Moving student information into the controller helped me separate application data from presentation. Reusable Blade components also reduced repetition, while displaying the current Philippine date showed how server-generated values can appear in a page.
 
-This knowledge strengthens my confidence in setting up full-stack PHP applications and managing relationships between clients, servers, and databases. Understanding Laravel’s folder structure and deployment requirements enables me to build clean, maintainable applications more efficiently while preparing me to troubleshoot environment discrepancies in team settings.
+The main challenges involved environment configuration. Composer was not recognized in some terminal sessions, PATH selected the wrong PHP executable, and the MySQL service did not start during connection checks. The VS Code command was also missing from PATH. These problems taught me to inspect error messages, locate the executable being used, restart terminals after configuration changes, and verify services before changing application code. Recording each solution made the troubleshooting process easier to repeat.
 
----
+Laravel is important in client-server development because it provides a consistent way to organize server responsibilities. Routes identify the requested resource, controllers coordinate processing, and views present the response. Database migrations and Eloquent support data management as an application grows. This organization helps developers maintain their work and understand code written by other team members.
 
-## 10. References
+I also learned that documentation and presentation are part of completing a project. A useful README needs accurate commands, clear explanations, and screenshots that match the current application. Using consistent screenshot sizes improved the evidence, while Git helped record changes through meaningful commits. Responsive styling and accessible motion preferences reminded me to consider how different people experience a website.
 
-- Laravel Documentation. (2026). Retrieved from [https://laravel.com/docs](https://laravel.com/docs)
-- PHP Documentation. (2026). Retrieved from [https://www.php.net/docs.php](https://www.php.net/docs.php)
-- Composer Documentation. (2026). Retrieved from [https://getcomposer.org/doc/](https://getcomposer.org/doc/)
-- Git Documentation. (2026). Retrieved from [https://git-scm.com/doc](https://git-scm.com/doc)
+These skills will support future projects, including the planned Laravel e-commerce system. I can apply the same setup checks, request-flow understanding, troubleshooting process, and documentation habits when adding database features or working with classmates. This activity gave me a practical foundation for developing more organized and reliable web applications.
+
+## 11. References
+
+Composer. (n.d.). *Documentation*. https://getcomposer.org/doc/
+
+Git. (n.d.). *Documentation*. https://git-scm.com/doc
+
+Laravel. (n.d.). *Laravel 12.x documentation*. https://laravel.com/docs/12.x
+
+The PHP Group. (n.d.). *PHP manual*. https://www.php.net/manual/en/
